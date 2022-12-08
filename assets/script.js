@@ -1,12 +1,27 @@
 $(function () {
   
-  today = dayjs().format('dddd, MMMM D, h:mm A')
+  today = dayjs().format('dddd, MMMM D, h A')
   var todaysDate = $('#currentDay');
   todaysDate.text(today);
 
+  currentHour = dayjs().hour();
 
-  var buttons = $('#buttons').on('click', function() {
-    console.log('kicking my butt');
+  console.log(currentHour)
+
+  var colorChange = function() {
+    
+
+  }
+
+
+  var buttons = $('.time-block').on('click', '.saveBtn', function(event) {
+    console.log('you!');
+    var comments = $(event.target).prev().val();
+    console.log(comments)
+    
+
+
+
   })
 
 
@@ -35,14 +50,7 @@ $(function () {
 
 
 
-// generate for loop starts 9 and ends 17 or end of day
-// html or javascript driven
-// determine whats in past present future and program it that way
-// Add date in proper format
 
-   //needs to be formatted properly
-
-//to start js call js function in top    var today = dayjs();
 
 
 
