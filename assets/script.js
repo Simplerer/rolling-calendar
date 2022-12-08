@@ -17,13 +17,18 @@ $(function () {
   var buttons = $('.time-block').on('click', '.saveBtn', function(event) {
     console.log('you!');
     var comments = $(event.target).prev().val();
-    console.log(comments)
     
 
-
-
+      
+    localStorage.setItem('comments', JSON.stringify(comments));
+    
   })
 
+
+  var textRetrieve = function() {
+
+  }
+  )
 
 
   // TODO: Add a listener for click events on the save button. This code should
