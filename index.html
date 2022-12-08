@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -29,6 +29,15 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container-lg px-5">
+      <div data-index="0" ></div>
+      <div data-index="1" ></div>
+      <div data-index="2" ></div>
+      <div data-index="3" ></div>
+      <div data-index="4" ></div>
+      <div data-index="5" ></div>
+      <div data-index="6" ></div>
+      <div data-index="7" ></div>
+      <div data-index="8" ></div>
       <!-- Use class for "past", "present", and "future" to apply styles to the
         time-block divs accordingly. The javascript will need to do this by
         adding/removing these classes on each div by comparing the hour in the
@@ -67,15 +76,17 @@
       </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script
+       <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"
     ></script>
-      <script>
-        var currentDate = $('#currentDay');
-        currDate.text(new Date());
-      </script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/plugin/utc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/plugin/advancedFormat.min.js"></script>
+    <script>
+      dayjs.extend(window.dayjs_plugin_utc)
+      dayjs.extend(window.dayjs_plugin_advancedFormat)
+    </script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>

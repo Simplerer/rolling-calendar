@@ -20,4 +20,22 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+  
+  var currDate = $('#currentDay');
+currDate.text(new Date()); 
 });
+
+
+
+// generate for loop starts 9 and ends 17 or end of day
+// html or javascript driven
+// determine whats in past present future and program it that way
+// Add date in proper format
+
+   //needs to be formatted properly
+
+//to start js call js function in top    var today = dayjs();
+
+
+
+
