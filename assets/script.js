@@ -8,16 +8,16 @@ $(function () {
 
   console.log(currentHour)
 
-  $('description').each(function() {
-    var timeField = parseInt($(this).parent().attr('id'));
+  $('.description').each(function() {
+    var timeField = parseInt($(this).parent(0).attr('id'));
     console.log(timeField);
-      // if (timeField < currentHour) {
-      //   $(this).parent.addClass('past');
-      // } else if (timeField === currentHour) {
-      //   $(this).parent.addClass('present');
-      // } else {
-      //   $(this).parent.addClass('future');
-      // }
+      if (timeField < currentHour) {
+        $(this).parent().addClass('past');
+      } else if (timeField === currentHour) {
+        $(this).parent().addClass('present');
+      } else {
+        $(this).parent().addClass('future');
+      }
         
 
   })
