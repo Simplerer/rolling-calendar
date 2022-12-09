@@ -3,7 +3,7 @@ $(function () {
   today = dayjs().format('dddd, MMMM Do, h A');
   var todaysDate = $('#currentDay');
   todaysDate.text(today);
-  var currentHour = dayjs().add(12, 'hour').hour();
+  var currentHour = dayjs().hour();
 
 
   $('.description').each(function() {
@@ -18,6 +18,13 @@ $(function () {
       }
       
     });
+
+    // var reload = localStorage.getItem(hour, comments);
+    // console.log(reload);
+    // $('.time-block').each(functioin)() {
+    //   reload
+    // }
+
     
     
     $('.time-block').on('click', '.saveBtn', function(event) {
