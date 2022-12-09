@@ -16,16 +16,9 @@ $(function () {
       } else {
         $(this).parent().addClass('future');
       }
-
       
     });
     
-
-    $('.description').each(function() {
-      var reload = localStorage.getItem(hour);
-      $(this).val(reload);
-
-    })
     
     $('.time-block').on('click', '.saveBtn', function(event) {
           ;
