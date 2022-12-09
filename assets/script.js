@@ -30,13 +30,14 @@ $(function () {
       localStorage.setItem(hour, comments);
     })
       
-    var restoreInfo = function(
+    
       $('.time-block').each(function() {
-        var infoText = $(this).attr('id').val();
+        
+        var infoText = localstorage.getItem($(this).attr('id').val());
 
-        infoText.
+        $(this).children(1).val(infoText);
       })
-    )
+    
   
         
       
