@@ -1,24 +1,27 @@
 $(function () {
   
-  today = dayjs().format('dddd, MMMM D, h A');
+  today = dayjs().format('dddd, MMMM Do, h A');
   var todaysDate = $('#currentDay');
   todaysDate.text(today);
 
-  currentHour = dayjs().hour();
+  var currentHour = dayjs().add(13,'hour').hour();
 
-  colorChange = $('description').each(function() {
+  console.log(currentHour)
+
+  $('description').each(function() {
     var timeField = parseInt($(this).parent().attr('id'));
-      if (timeField < currentHour) {
-        $(this).parent.addClass('past');
-      } else if (timeField === currentHour) {
-        $(this).parent.addClass('present');
-      } else {
-        $(this).parent.addClass('future');
-      }
+    console.log(timeField);
+      // if (timeField < currentHour) {
+      //   $(this).parent.addClass('past');
+      // } else if (timeField === currentHour) {
+      //   $(this).parent.addClass('present');
+      // } else {
+      //   $(this).parent.addClass('future');
+      // }
         
 
   })
-    
+
   
 
     
@@ -67,7 +70,8 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
   
-  
+ 
+
 });
 
 
