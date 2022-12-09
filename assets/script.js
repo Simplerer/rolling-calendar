@@ -3,7 +3,7 @@ $(function () {
   today = dayjs().format('dddd, MMMM Do, h A');
   var todaysDate = $('#currentDay');
   todaysDate.text(today);
-  var currentHour = dayjs().add(13,'hour').hour();
+  var currentHour = dayjs().add(12, 'hour').hour();
 
 
   $('.description').each(function() {
@@ -16,8 +16,16 @@ $(function () {
       } else {
         $(this).parent().addClass('future');
       }
+
+      
     });
-        
+    
+
+    $('.description').each(function() {
+      var reload = localStorage.getItem(hour);
+      $(this).val(reload);
+
+    })
     
     $('.time-block').on('click', '.saveBtn', function(event) {
           ;
@@ -30,16 +38,7 @@ $(function () {
       localStorage.setItem(hour, comments);
     })
       
-    $('.time-block').each(function() {
-      
-      var reload = localStorage.getItem(hour);
-      reload.each(function() {
-       var textReload = localStorage.getItem(comments);
-
-    })
-
-
-    })
+    
     
 
  
