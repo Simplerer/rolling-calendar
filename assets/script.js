@@ -1,23 +1,43 @@
 $(function () {
   
-  today = dayjs().format('dddd, MMMM D, h A')
+  today = dayjs().format('dddd, MMMM D, h A');
   var todaysDate = $('#currentDay');
   todaysDate.text(today);
 
   currentHour = dayjs().hour();
 
-  console.log(currentHour)
+  colorChange = $('description').each(function() {
+    var timeField = parseInt($(this).parent().attr('id'));
+      if (timeField < currentHour) {
+        $(this).parent.addClass('past');
+      } else if (timeField === currentHour) {
+        $(this).parent.addClass('present');
+      } else {
+        $(this).parent.addClass('future');
+      }
+        
 
-  var colorChange = function() {
+  })
+    
+  
+
     
 
-  }
+  
 
+
+
+ 
 
   var buttons = $('.time-block').on('click', '.saveBtn', function(event) {
-    console.log('you!');
+   
+    var hour = $(this).attr('id');
+
+    console.log(hour);
+
     var comments = $(event.target).prev().val();
-    
+
+    console.log(comments);
 
       
     localStorage.setItem('comments', JSON.stringify(comments));
@@ -25,11 +45,8 @@ $(function () {
   })
 
 
-  var textRetrieve = function() {
-
-  }
-  )
-
+  
+  
 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
